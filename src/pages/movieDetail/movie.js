@@ -51,7 +51,7 @@ const Movie = () => {
             </div>
             <div className="movie__rating">
               {currentMovieDetail ? currentMovieDetail.vote_average : ""}{" "}
-              <i class="fas fa-star" />
+              <i className="fas fa-star" />
               <span className="movie__voteCount">
                 {currentMovieDetail
                   ? "(" + currentMovieDetail.vote_count + ") votes"
@@ -70,7 +70,7 @@ const Movie = () => {
               {currentMovieDetail && currentMovieDetail.genres
                 ? currentMovieDetail.genres.map((genre) => (
                     <>
-                      <span className="movie__genre" id={genre.id}>
+                      <span className="movie__genre" key={genre.id} id={genre.id}>
                         {genre.name}
                       </span>
                     </>
@@ -122,7 +122,7 @@ const Movie = () => {
           currentMovieDetail.production_companies.map((company) => (
             <>
               {company.logo_path && (
-                <span className="productionCompanyImage">
+                <span className="productionCompanyImage" key={company.logo_path}>
                   <img
                     className="movie__productionComapany"
                     alt="Production Company"

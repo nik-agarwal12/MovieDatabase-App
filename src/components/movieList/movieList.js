@@ -21,11 +21,11 @@ const MovieList = () => {
   }, [type]);
 
   return (
-    <div className="movie__list">
+    <div className="container-fluid">
       <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
       <div className="list__cards">
         {movieList.map((movie) => (
-          <Cards movie={movie} />
+          <Cards key={movie.id} movie={movie} />
         ))}
       </div>
     </div>

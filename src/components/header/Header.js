@@ -1,18 +1,58 @@
-import React from "react"
-import "./Header.css"
-import { Link } from "react-router-dom"
+import React from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <div className="header">
-            <div className="headerLeft">
-                <Link to="/"><img className="header__icon" alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" /></Link>
-                <Link to="/movies/popular" style={{textDecoration: "none"}}><span>Popular</span></Link>
-                <Link to="/movies/top_rated" style={{textDecoration: "none"}}><span>Top Rated</span></Link>
-                <Link to="/movies/upcoming" style={{textDecoration: "none"}}><span>Upcoming</span></Link>
-            </div>
-        </div>
-    )
-}
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Link to="/">
+            <img
+              className="header__icon"
+              alt="Logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png"
+            />
+          </Link>
 
-export default Header
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item mx-3 fs-5">
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to="/movies/popular"
+                >
+                  Popular
+                </Link>
+              </li>
+              <li className="nav-item mx-3 fs-5">
+                <Link className="nav-link" to="/movies/top_rated">
+                  Top Rated
+                </Link>
+              </li>
+              <li className="nav-item mx-3 fs-5">
+                <Link className="nav-link" to="/movies/upcoming">
+                  Upcoming
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Header;
