@@ -23,9 +23,9 @@ const Cards = ({movie}) => {
             </SkeletonTheme>
         </div>
         :
-        <Link to={`/movie/${movie.id}`} style={{textDecoration:"none", color:"white"}}>
+        <Link to={`/movie/${movie.id}`} key={movie.id} style={{textDecoration:"none", color:"white"}}>
             <div className="cards mx-2 my-2">
-                <img alt="Movie Image" className="cards__img" src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} />
+                <img alt="MovieImage" className="cards__img" src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} />
                 <div className="cards__overlay">
                     <div className="card__title">{movie?movie.original_title:""}</div>
                     <div className="card__runtime">

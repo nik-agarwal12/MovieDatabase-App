@@ -9,7 +9,7 @@ const Movie = () => {
   useEffect(() => {
     const getData = () => {
       fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=05d40c147b059cb5a8142e5121c0d990&language=en-US`
       )
         .then((res) => res.json())
         .then((data) => setMovie(data));
@@ -84,7 +84,7 @@ const Movie = () => {
           </div>
         </div>
       </div>
-      <div className="movie__links">
+      <div className="movie__links container d-flex justify-content-between">
         <div className="movie__heading">Useful Links</div>
         {currentMovieDetail && currentMovieDetail.homepage && (
           <a
@@ -115,8 +115,8 @@ const Movie = () => {
           </a>
         )}
       </div>
-      <div className="movie__heading">Production companies</div>
-      <div className="movie__production">
+      <div className="movie__heading text-center">Production companies</div>
+      <div className="container-fluid d-flex flex-wrap justify-content-center">
         {currentMovieDetail &&
           currentMovieDetail.production_companies &&
           currentMovieDetail.production_companies.map((company) => (

@@ -28,7 +28,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item mx-3 fs-5">
+              <li className="nav-item fs-5 mx-3">
                 <Link
                   className="nav-link"
                   aria-current="page"
@@ -37,12 +37,12 @@ const Header = () => {
                   Popular
                 </Link>
               </li>
-              <li className="nav-item mx-3 fs-5">
+              <li className="nav-item fs-5 mx-3">
                 <Link className="nav-link" to="/movies/top_rated">
                   Top Rated
                 </Link>
               </li>
-              <li className="nav-item mx-3 fs-5">
+              <li className="nav-item fs-5 mx-3">
                 <Link className="nav-link" to="/movies/upcoming">
                   Upcoming
                 </Link>
